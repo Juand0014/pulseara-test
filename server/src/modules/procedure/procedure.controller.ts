@@ -6,6 +6,7 @@ import { UpdateProcedureDto } from './dto/update-procedure.dto';
 import { PaginationDto, ParseObjectIdPipe } from 'src/common';
 import { ApiOperation, ApiParam, ApiQuery } from '@nestjs/swagger';
 import { ApiResponseStatus } from 'src/config';
+import { Procedure } from './entities/procedure.entity';
 
 @Controller('procedure')
 export class ProcedureController {
@@ -16,13 +17,13 @@ export class ProcedureController {
     description: 'Create Data',
     summary: 'Create Data',
   })
-  @ApiResponseStatus()
+  @ApiResponseStatus(Procedure)
   create(@Body() createProcedureDto: CreateProcedureDto) {
     return this.procedureService.create(createProcedureDto);
   }
 
   @Get()
-  @ApiResponseStatus()
+  @ApiResponseStatus(Procedure)
   @ApiQuery({
     name: "offset",
     required: false,
@@ -41,7 +42,7 @@ export class ProcedureController {
   }
 
   @Get(':id')
-  @ApiResponseStatus()
+  @ApiResponseStatus(Procedure)
   @ApiOperation({ description: 'Get data by Id', summary: 'get data by Id' })
   @ApiParam({
     name: 'id',
@@ -57,7 +58,7 @@ export class ProcedureController {
     description: 'Update data by Id and body',
     summary: 'Update data by Id and body',
   })
-  @ApiResponseStatus()
+  @ApiResponseStatus(Procedure)
   @ApiParam({
     name: 'id',
     description: 'The id of the record to update',
@@ -73,7 +74,7 @@ export class ProcedureController {
     type: String,
     description: 'The id of the entity',
   })
-  @ApiResponseStatus()
+  @ApiResponseStatus(Procedure)
   @ApiOperation({
     description: 'Create data by Id',
     summary: 'Create data by Id',
