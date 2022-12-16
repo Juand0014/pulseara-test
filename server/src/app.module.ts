@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { database, envConfig, environment, JoiValidationSchema } from './config';
 import { ProcedureModule } from './modules/procedure/procedure.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { ProcedureModule } from './modules/procedure/procedure.module';
       validationSchema: JoiValidationSchema
     }),
     MongooseModule.forRoot(database[environment]),
-    ProcedureModule
+    ProcedureModule,
+    CommonModule
   ],
   controllers: [],
   providers: [],
