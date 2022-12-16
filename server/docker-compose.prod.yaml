@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  pulsaera:
+    depends_on:
+      - db
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: pulsaera
+    container_name: pulsaera-app
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      DB_URI: ${DB_URI}
+      CORS_ALLOWED_HOSTS: ${CORS_ALLOWED_HOSTS}
+  db:
+    image: mongo:5
+    container_name: pulsaeradb-db
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGODB_DATABASE: pulsaeradb
+    volumes:
+      - ./mongo:/data/db

@@ -20,6 +20,9 @@ mongo/
 /coverage
 /.nyc_output
 
+# database
+mongo/
+
 # IDEs and editors
 /.idea
 .project
