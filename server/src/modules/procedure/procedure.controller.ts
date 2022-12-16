@@ -1,9 +1,9 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { Schema } from 'mongoose';
 import { ProcedureService } from './procedure.service';
 import { CreateProcedureDto } from './dto/create-procedure.dto';
 import { UpdateProcedureDto } from './dto/update-procedure.dto';
-import { PaginationDto } from 'src/common';
-import { Schema } from 'mongoose';
+import { PaginationDto, ParseObjectIdPipe } from 'src/common';
 
 @Controller('procedure')
 export class ProcedureController {
@@ -15,22 +15,22 @@ export class ProcedureController {
   }
 
   @Get()
-  findAll(paginationDto: PaginationDto) {
+  findAll(@Query() paginationDto: PaginationDto) {
     return this.procedureService.findAll(paginationDto);
   }
 
   @Get(':id')
-  findOne(@Param('id') _id: Schema.Types.ObjectId) {
+  findOne(@Param('id', ParseObjectIdPipe) _id: Schema.Types.ObjectId) {
     return this.procedureService.findOne(_id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: Schema.Types.ObjectId, @Body() updateProcedureDto: UpdateProcedureDto) {
+  update(@Param('id', ParseObjectIdPipe) id: Schema.Types.ObjectId, @Body() updateProcedureDto: UpdateProcedureDto) {
     return this.procedureService.update(id, updateProcedureDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: Schema.Types.ObjectId) {
-    return this.procedureService.remove(id);
+  remove(@Param('id', ParseObjectIdPipe) _id: Schema.Types.ObjectId) {
+    return this.procedureService.remove(_id);
   }
 }

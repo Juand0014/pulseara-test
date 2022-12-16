@@ -25,13 +25,13 @@ export class ProcedureService {
   }
 
   async findAll(paginationDto: PaginationDto): Promise<Procedure[]> {
-    const { limit= 10, offset= 0 } = paginationDto;
+    const { limit = 10, offset= 0 } = paginationDto;
     try{
       return await this.proceduleModule
                  .find()
                  .select(['-__v', '-createdAt', '-updatedAt'])
-                 .skip(offset)
                  .limit(limit)
+                 .skip(offset)
                  .exec();
     }
     catch(err){
