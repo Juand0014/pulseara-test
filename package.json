@@ -1,0 +1,11 @@
+{
+  "name": "pulsaera-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "repository": "https://github.com/Juand0014/pulseara-test.git",
+  "author": "juand0014 <juand0014@hotmail.com>",
+  "scripts": {
+    "dev": "vite"
+  }
+}
