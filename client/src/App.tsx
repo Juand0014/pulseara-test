@@ -1,16 +1,20 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { http } from "./services/services"
 import "./App.scss"
+import { IProcedure } from "./models/procedures"
+import { AxiosResponse } from "axios"
+import { useQuery } from "react-query"
 
 function App() {
 
-  useEffect(() => {
-    (async () => {
-      const data = await http.get('procedure');
-      console.log(data);
-    })()
-  }, [])
+  const onSuccess = () => console.log("success");
+	const onError = () => console.log("error");
 
+  const { data, error, isLoading } = useQuery<any, Error>("procedure", ()=> http.get('procedure'), {
+    onSuccess,
+		onError,
+  })
+  
   return (
     <div className="App">
       <h3>Procedimientos</h3>
