@@ -20,7 +20,7 @@ export const ModalComponent = ({ data }: any) => {
     return (
         <div>
             <button className="button" onClick={handleOpen}>
-                Editar Procedimientos
+                {data.length === 0 ? "Agregar Procedimientos" : "Editar Procedimientos"}
             </button>
             <Modal
                 open={open}
@@ -44,7 +44,7 @@ export const ModalComponent = ({ data }: any) => {
                     <div className="modal-footer">
                         <button className="cancel" onClick={handleClose}>Cancelar</button>
                         <button className="save">
-                            <Check fontSize="small" sx={{ padding: "0px", color: '#fff' }} />{" "}
+                            <Check fontSize="small" onClick={handleClose} sx={{ padding: "0px", color: '#fff' }} />{" "}
                             <span>Guardar Cambios</span>
                         </button>
                     </div>

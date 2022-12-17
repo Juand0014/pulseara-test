@@ -1,4 +1,5 @@
 import { AxiosResponse } from 'axios';
+import { useQueryClient } from 'react-query';
 import { api } from '../config';
 import { Pagination } from './pagination.interface';
 
@@ -15,6 +16,8 @@ const post = async <T>(url: string, data: any): Promise<AxiosResponse<T>> => {
 const remove = async <T>(url: string, id: string): Promise<AxiosResponse<T>> => {
 	return await api.delete(`${url}/${id}`);
 }
+
+
 
 export const http = {
 	get,

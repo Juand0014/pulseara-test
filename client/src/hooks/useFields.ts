@@ -42,11 +42,14 @@ export const useFields = <T extends FieldsType>(fields: T) => {
 		setValues({ } as KeyWithString);
 	};
 
+	const existSomeError = Object.values(errors).some(error => error);
+
 	return {
 		values,
 		errors,
 		reset,
 		handleChange,
-		handleBlur
+		handleBlur,
+		existSomeError
 	};
 };

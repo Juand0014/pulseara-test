@@ -15,13 +15,15 @@ export const Home = () => {
 
     if (error) return <h1>Ha ocurrido un error</h1>;
 
+
     return (
         <>
             <h3>Procedimientos</h3>
-            {data.length &&
+            {!data.length && <h1>No hay procedimientos</h1>}
+            {data.length > 0 &&
                 data.map((item: IProcedure) => {
                     return <CardProcedure key={item._id} {...item} />;
-                })}
+            })}
             <ModalComponent data={data} />
         </>
     );

@@ -29,7 +29,7 @@ export const ChildModal = () => {
 					aria-labelledby="parent-modal-title"
 					aria-describedby="parent-modal-description"
 			>
-					<Box sx={{ ...style, height: 400, width: 900 }}>
+					<Box sx={{ ...style, height: 350, width: 600 }}>
 							<h2 id="parent-modal-title">Add procedure</h2>
 							<Form />
 					<Button sx={closeModal} onClick={handleClose}>X</Button>

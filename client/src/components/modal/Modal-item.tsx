@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { Icon } from "@mui/material";
+import { Alert, Icon } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { ModalItemGroup } from "./Modal-item-group";
@@ -26,10 +26,14 @@ export const ModalItem = ({
 
     });
 
+    console.log(mutation.isSuccess)
+
     const removeItem = () => mutation.mutate();
 
     return (
         <div className="form" key={_id}>
+            {mutation.isError && <Alert severity="error" >El registro no fue agregado!</Alert>}
+            {mutation.isSuccess && <Alert severity="success">El registro fue eliminar!</Alert>}
             <div className="form__container">
                 <Icon className="form__icon" onClick={removeItem}>
                     <DeleteIcon color="disabled" />

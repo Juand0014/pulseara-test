@@ -12,7 +12,8 @@
 }
 
 .modal-container {
-	height: 90px;
+	margin: 0;
+	height: 100px;
 	overflow-x: 'hidden';
 	overflow: 'auto';
 }
@@ -29,7 +30,6 @@
 }
 
 .modal-body {
-	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -51,6 +51,11 @@
 		cursor: pointer;
 
 		&.cancel {
+			&:disabled{
+				background-color: rgb(217, 201, 238);
+				color: gray;
+				cursor: not-allowed;
+			}
 			border: 2px solid rgb(217, 201, 238);
 			color: gray;
 			background-color: white;
@@ -59,6 +64,11 @@
 		}
 		
 		&.save {
+			&:disabled{
+				background-color: rgb(55, 45, 76);
+				color: rgb(185, 185, 185);
+				cursor: not-allowed;
+			}
 			border: 0px;
 			background-color: rgb(100, 42, 224);
 			width: 10rem;
