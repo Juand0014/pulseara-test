@@ -1,0 +1,151 @@
+.button {
+	padding: 10px 30px;
+	border-radius: .5rem;
+	border: none;
+	background-color: #3f48ad;
+	height: 500;
+	color: white;
+	font-weight: bolder;
+	font-size: 14px;
+	line-height: 14px;
+	cursor: pointer;
+}
+
+.modal-container {
+	margin: 0;
+	height: 100px;
+	overflow-x: 'hidden';
+	overflow: 'auto';
+}
+
+.modal-header {
+	display: flex;
+	flex-direction: row;
+	padding: 35px;
+
+	>h3 {
+		margin: 0;
+		padding: 0 5px 0 0;
+	}
+}
+
+.modal-body {
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 35px;
+	max-height: 60%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.modal-footer {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+
+	>button {
+		border-radius: 5px;
+		padding: 5px;
+		margin: 5px;
+		cursor: pointer;
+
+		&.cancel {
+			&:disabled{
+				background-color: rgb(217, 201, 238);
+				color: gray;
+				cursor: not-allowed;
+			}
+			border: 2px solid rgb(217, 201, 238);
+			color: gray;
+			background-color: white;
+			width: 8rem;
+			font-weight: 600;
+		}
+		
+		&.save {
+			&:disabled{
+				background-color: rgb(55, 45, 76);
+				color: rgb(185, 185, 185);
+				cursor: not-allowed;
+			}
+			border: 0px;
+			background-color: rgb(100, 42, 224);
+			width: 10rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			> span {
+				color: white;
+				font-size: small;
+				font-weight: 600;
+				padding: 0 5px;
+				
+			}
+		}
+	}
+}
+
+.modal-child-header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	cursor: pointer;
+
+	>p {
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+		font-weight: 600;
+		color: rgb(0, 143, 97);
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10px;
+
+	&__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	&__group {
+		margin: 5px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+
+		>input {
+			margin-top: 10px;
+			height: 30px;
+			width: 80%;
+			border-radius: .2rem;
+			border: 1px solid #1e8374;
+			font-size: 14px;
+			line-height: 14px;
+			color: #45454b;
+			outline: none;
+			padding: 1px 10px;
+			cursor: not-allowed
+		}
+
+		>label {
+			font-size: 14px;
+			line-height: 14px;
+		}
+	}
+
+	&__icon {
+		padding: 35px 5px 10px 0;
+		cursor: pointer;
+	}
+}

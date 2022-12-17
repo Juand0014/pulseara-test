@@ -14,7 +14,6 @@ services:
       - "${PORT}:${PORT}"
     environment:
       DB_URI: ${DB_URI}
-      CORS_ALLOWED_HOSTS: ${CORS_ALLOWED_HOSTS}
   db:
     image: mongo:5
     container_name: pulsaeradb-db
