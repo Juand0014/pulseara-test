@@ -1,4 +1,6 @@
-import { IProcedure } from "../../models/procedures";
+import { IProcedure } from "../../models";
+import { CardBody } from "./Card-body";
+import { CardItem } from "./Card-item";
 import "./Card.style.scss";
 
 export const CardProcedure = ({
@@ -11,28 +13,13 @@ export const CardProcedure = ({
     return (
         <div className="card-container">
             <div className="card">
-                <div className="card__body">
-                    <div className="card-item">
-                        <h4 className="item-title">Procedimiento 01</h4>
-                        <p>{procedure}</p>
-                    </div>
-                    <div className="card-item">
-                        <h4 className="item-title">Código</h4>
-                        <p>{code}</p>
-                    </div>
-                    <div className="card-item">
-                        <h4 className="item-title">Reclamado</h4>
-                        <p>{reclaim}</p>
-                    </div>
-                    <div className="card-item">
-                        <h4 className="item-title">Diferencia RD$</h4>
-                        <p>{difference}</p>
-                    </div>
-                    <div className="card-item">
-                        <h4 className="item-title">Autorizado RD$</h4>
-                        <p>{authorized}</p>
-                    </div>
-                </div>
+                <CardBody>
+                    <CardItem title="Procedimiento 01" value={procedure} />
+                    <CardItem title="Código" value={code} />
+                    <CardItem title="Reclamado" value={reclaim} />
+                    <CardItem title="Diferencia RD$" value={difference} />
+                    <CardItem title="Autorizado RD$" value={authorized} />
+                </CardBody>
             </div>
         </div>
     );
