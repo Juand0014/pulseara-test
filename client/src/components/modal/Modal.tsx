@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Modal, Icon, Button } from "@mui/material";
+import { Box, Modal, Button } from "@mui/material";
 import Check from "@mui/icons-material/Check";
 
 import { ChildModal } from "./ChildModal";

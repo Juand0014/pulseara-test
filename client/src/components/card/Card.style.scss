@@ -1,4 +1,4 @@
-.card-container{
+.card-container {
 	display: flex;
 	flex-direction: column;
 	gap: 1.25rem;
@@ -12,14 +12,14 @@
 	max-width: 50%;
 	background-color: white;
 	border-radius: .5rem;
-	
+
 	&__body {
 		display: flex;
 		justify-content: space-between;
 	}
 
-  &-item{
-		>h4{
+	&-item {
+		>h4 {
 			margin: 10px 0;
 			color: #949494;
 			font-size: 12px;

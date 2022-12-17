@@ -4,7 +4,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import { ModalItemGroup } from "./Modal-item-group";
 import { IProcedure } from "../../models";
-import { http } from "../../services";
+import { api } from '../../config';
 
 export const ModalItem = ({
     _id,
@@ -17,8 +17,8 @@ export const ModalItem = ({
 	const queryClient = useQueryClient();
 
     const mutation = useMutation({
-        mutationFn: (removeProcedure) => {
-            return http.remove("procedure", _id);
+        mutationFn: (removeProcedure: string) => {
+            return api.delete(`procedure/${removeProcedure}`);
         },
 				onSettled: () => {
 					queryClient.invalidateQueries('procedures')
@@ -26,9 +26,7 @@ export const ModalItem = ({
 
     });
 
-    console.log(mutation.isSuccess)
-
-    const removeItem = () => mutation.mutate();
+    const removeItem = () => mutation.mutate(_id);
 
     return (
         <div className="form" key={_id}>
