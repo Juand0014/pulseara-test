@@ -1,6 +1,5 @@
-FROM node:14.17.1-alpine3.13 AS build-client
+FROM node:14.18.3-stretch AS build-client
 WORKDIR /app/client
-RUN ls
 COPY ./client/package*.json ./
 RUN yarn install --no-optional
 COPY ./client ./
@@ -30,5 +29,5 @@ RUN yarn install --prod
 COPY --from=builder /app/server/dist ./dist
 ENV PORT 3000
 EXPOSE 3000
-CMD ["yarn", "start:prod"]
 
+CMD ["yarn", "start:prod"]

@@ -1,10 +1,11 @@
-FROM mhart/alpine-node:16 as builder
+FROM node:14.18.3-stretch as builder
+	WORKDIR /app
 
-WORKDIR /app
+	ENV PATH /app/node_modules/.bin:$PATH
 
-ENV PATH /app/node_modules/.bin:$PATH
+	COPY package*.json ./
+	RUN npm install --no-optional --silent
 
-COPY package*.json ./
-RUN npm install --no-optional --silent
+	COPY . ./
 
-COPY . ./
+	CMD ["yarn", "dev"]

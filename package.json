@@ -6,7 +6,8 @@
   "repository": "https://github.com/Juand0014/pulseara-test.git",
   "author": "juand0014 <juand0014@hotmail.com>",
   "scripts": {
-    "start:prod": "cross-env NODE_ENV=development concurrently -n \"db,server,client\" -c 'blue,green,red' \"cd server && docker compose up -d\" \"cd server && yarn start:dev\" \"cd client && yarn dev\""
+    "start:prod": "cross-env NODE_ENV=production concurrently -n \"server,client\" -c 'green,red' \"cd server && yarn start:dev\" \"cd client && yarn dev\"",
+    "ipkgs:install": "yarn install && concurrently -n \"server,client\" -c 'green,red' \"cd server && yarn install\" \"cd client && yarn install\""
   },
   "dependencies": {
     "concurrently": "^7.6.0",
