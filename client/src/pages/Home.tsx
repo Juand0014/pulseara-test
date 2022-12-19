@@ -18,7 +18,7 @@ export const Home = () => {
 
     return (
         <>
-            <h3>Procedimientos</h3>
+            <span className="A-consultar">Procedimientos</span>
             {!data.length && <h1>No hay procedimientos</h1>}
             {data.length > 0 &&
                 data.map((item: IProcedure) => {

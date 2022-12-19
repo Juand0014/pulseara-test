@@ -11,16 +11,14 @@ export const CardProcedure = ({
     reclaim,
 }: IProcedure) => {
     return (
-        <div className="card-container">
-            <div className="card">
-                <CardBody>
-                    <CardItem title="Procedimiento 01" value={procedure} />
-                    <CardItem title="Código" value={code} />
-                    <CardItem title="Reclamado" value={reclaim} />
-                    <CardItem title="Diferencia RD$" value={difference} />
-                    <CardItem title="Autorizado RD$" value={authorized} />
-                </CardBody>
-            </div>
+        <div className="card">
+            <CardBody>
+                <CardItem title="Procedimiento 01" value={procedure} />
+                <CardItem title="Código" value={code} />
+                <CardItem title="Reclamado" value={reclaim} />
+                <CardItem title="Diferencia RD$" value={difference} />
+                <CardItem title="Autorizado RD$" value={authorized} />
+            </CardBody>
         </div>
     );
 };
