@@ -28,7 +28,7 @@ services:
     environment:
       DB_URI_PROD: ${DB_URI_PROD}
       DB_URI: ${DB_URI}
-      NODE_ENV: 'production'
+      NODE_ENV: 'development'
   db:
     image: mongo:5
     container_name: pulsaeradb-db

@@ -28,9 +28,9 @@ export const ModalComponent = ({ data }: any) => {
                 aria-labelledby="parent-modal-title"
                 aria-describedby="parent-modal-description"
             >
-                <Box sx={{ ...style, height: 400, width: 900 }}>
+                <Box sx={{ ...style, height: 456, width: 1041 }}>
                     <div className="modal-header">
-                        <h3>Procedimientos</h3>
+                        <span className="Modificar-Cliente">Procedimientos</span>
                         <ChildModal />
                     </div>
                     <div className="modal-body">

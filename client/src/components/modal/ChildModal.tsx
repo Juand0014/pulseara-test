@@ -21,7 +21,7 @@ export const ChildModal = () => {
 					fontSize: 25,
 					color: "rgb(0, 143, 97)",
 				}}/> 
-				<p className="text-open-modal" >Añadir procedimiento</p>
+				<div className="text-open-modal" >Añadir procedimiento</div>
 			</div>
       <Modal
 					open={open}
@@ -29,7 +29,7 @@ export const ChildModal = () => {
 					aria-labelledby="parent-modal-title"
 					aria-describedby="parent-modal-description"
 			>
-					<Box sx={{ ...style, height: 350, width: 600 }}>
+					<Box sx={{ ...style, height: 450, width: 600 }}>
 							<h2 id="parent-modal-title">Add procedure</h2>
 							<Form />
 					<Button sx={closeModal} onClick={handleClose}>X</Button>

@@ -1,13 +1,25 @@
 .button {
-	padding: 10px 30px;
-	border-radius: .5rem;
-	border: none;
-	background-color: #3f48ad;
-	height: 500;
-	color: white;
-	font-weight: bolder;
-	font-size: 14px;
-	line-height: 14px;
+	width: 202px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 35px 739px 0 0;
+  padding: 16px;
+  border-radius: 5px;
+  background-color: #3f48ad;
+  flex-grow: 0;
+	border: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #fff;
 	cursor: pointer;
 }
 
@@ -23,10 +35,29 @@
 	flex-direction: row;
 	padding: 35px;
 
-	>h3 {
+	>.Modificar-Cliente {
 		margin: 0;
 		padding: 0 5px 0 0;
+		color: #1e2469;
+		font-size: 32px;
+		font-weight: 500;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.4;
+		letter-spacing: normal;
+		text-align: left;
 	}
+
+}
+.text-open-modal {
+	font-size: 16px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	text-align: left;
+	color: #07b284;
 }
 
 .modal-body {
@@ -41,14 +72,16 @@
 
 .modal-footer {
 	display: flex;
-	width: 100%;
+	margin-top: 40px;
+	width: 98%;
 	justify-content: flex-end;
 
 	>button {
-		border-radius: 5px;
-		padding: 5px;
-		margin: 5px;
 		cursor: pointer;
+		border-radius: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		&.cancel {
 			&:disabled{
@@ -56,11 +89,17 @@
 				color: gray;
 				cursor: not-allowed;
 			}
-			border: 2px solid rgb(217, 201, 238);
-			color: gray;
-			background-color: white;
-			width: 8rem;
-			font-weight: 600;
+			width: 138px;
+			gap: 10px;
+			margin: 0 16.9px 0 0;
+			padding: 16px;
+			border: solid 2px #d6d6eb;
+			background-color: #fff;
+			height: 10px;
+			flex-grow: 0;
+			font-size: 14px;
+			font-weight: bold;
+			color: #6e6d8c;
 		}
 		
 		&.save {
@@ -70,11 +109,10 @@
 				cursor: not-allowed;
 			}
 			border: 0px;
-			background-color: rgb(100, 42, 224);
-			width: 10rem;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			flex-grow: 0;
+			flex-direction: row;
+			margin: 0 0 0 16.9px;
+			background-color: #3f48ad;
 			> span {
 				color: white;
 				font-size: small;
@@ -125,27 +163,36 @@
 		height: 100%;
 
 		>input {
-			margin-top: 10px;
-			height: 30px;
-			width: 80%;
-			border-radius: .2rem;
-			border: 1px solid #1e8374;
-			font-size: 14px;
-			line-height: 14px;
-			color: #45454b;
-			outline: none;
-			padding: 1px 10px;
+			flex-grow: 0;
+			margin: 8px 0 0 1px;
+			padding: 10px 0px 12px 16px;
+			border-radius: 5px;
+			border: solid 2px #9cbeb3;
+			background-color: #f6f6fb;
 			cursor: not-allowed
 		}
 
 		>label {
-			font-size: 14px;
-			line-height: 14px;
+			flex-grow: 0;
+			margin: 0 50px 8px 0;
+			opacity: 0.7;
+			font-size: 16px;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.5;
+			letter-spacing: normal;
+			text-align: left;
+			color: #000;
 		}
 	}
 
 	&__icon {
-		padding: 35px 5px 10px 0;
+		width: 16.6px;
+		height: 18.9px;
+		flex-grow: 0;
+		margin: 52px 14.5px 0.5px 0;
+		object-fit: contain;
 		cursor: pointer;
 	}
 }
